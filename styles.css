@@ -1,0 +1,45 @@
+
+.keyboard {
+  padding: 50px;
+  display: flex;
+  width: calc(52 * var(--white-key-width));
+  --black-key-width: 16px;
+  --white-key-width: 24px;
+  --black-key-height: 70px;
+  --white-key-height: 120px;
+}
+
+.keyboard div{
+  position: relative;
+  width: var(--key-width);
+  height: var(--key-height);
+}
+
+.keyboard div::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+}
+
+.keyboard .white {
+  --key-width: var(--white-key-width);
+  --key-height: var(--white-key-height);
+}
+
+
+.keyboard .black {
+  --key-width: var(--black-key-width);
+  --key-height: var(--black-key-height);
+  margin: 0 calc(var(--black-key-width) / -2);
+
+  background-color: black;
+  z-index: 1;
+}
+
+.keyboard .active {
+  background-color: green;
+}
